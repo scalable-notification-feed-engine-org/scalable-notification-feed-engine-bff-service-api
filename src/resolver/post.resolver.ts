@@ -46,13 +46,12 @@ export class PostResolver {
   }
 
   @ResolveField(() => User)
-  async author(@Parent() post: postFromServiceInterface.PostFromService,@Context() context: graphqlContextInterface.GraphqlContext) {
+  async author(@Context() context: graphqlContextInterface.GraphqlContext) {
     const authHeader = context.headers.authorization;
     console.log("Authorized", authHeader);
     if (!authHeader) {
       throw new Error('Unauthorized');
     }
-    const { userId } = post;
-    return await this.userService.getUserById(userId,authHeader);
+    return await this.userService.getUserById(authHeader);
   }
 }
