@@ -1,6 +1,5 @@
 import {
   Context,
-  Parent,
   Query,
   ResolveField,
   Resolver,
@@ -9,7 +8,6 @@ import { Post } from '../types/post.model';
 import { FeedService } from '../service/feed.service';
 import { UserService } from '../service/user.service';
 import { User } from '../types/user.model';
-import * as postFromServiceInterface from '../interfaces/post-from-service.interface';
 import * as graphqlContextInterface from '../interfaces/graphql-context.interface';
 import { jwtDecode } from 'jwt-decode';
 
