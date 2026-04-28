@@ -5,7 +5,9 @@ export class User {
   @Field()
   id: string;
   @Field()
-  username: string;
+  firstName: string;
   @Field({ nullable: true })
   email: string;
+  @Field({nullable: true})
+  avatarUrl: string
 }
